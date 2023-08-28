@@ -93,20 +93,4 @@ in progress...
 <br>
 
 ## ▶ Go
-### Go Routines
-Cuando trabajamos con concurrencia, una de las formas de comunicar los procesos es mediante canales . La otra forma es via "shared memory" aunque aplica otros mecanismos y es mas riesgoso. Un canal implica la comunicación entre 2 entidades, un 'Sender' y un 'Receiver'. Si un proceso termina de realizar su tarea, puede dejar sus resultados o algún mensaje en el canal, que le será de utilidad a la entidad o proceso que lo reciba. Las reglas que aplican dependerá de las características en las que funcione el canal.
-
-Existen 2 tipos: Unbuffered Channel y Buffered Channel
-> Unbuffered Channel: es un canal que no tiene un tamaño definido, de comunicacion directa. Esto implica que el 'Sender' y el 'Receiver' deben estar sincronizados para que la comunicación sea exitosa.
-> - Caso 1: Si el 'Sender' envía un mensaje y el 'Receiver' no lo recibe, el 'Sender' se quedará esperando hasta que el 'Receiver' lo reciba y el proceso se estancará, pues el sender no podra continuar con otras tareas.
-> - Caso 2: Si el 'Receiver' recibe un mensaje y el 'Sender' no lo envía, el 'Receiver' se quedará esperando hasta que el 'Sender' lo envíe. Tambien genera un estancamiento, pues el 'Receiver' no podrá continuar con otras tareas.
->
-> El estancamiento se conoce como "Deadlock"
-
-![alt text](/assets/goroutines-unbuffered.png "Unbuffered Channel")
-
-> Buffered Channel: es un canal que tiene un tamaño definido, de comunicacion indirecta. Esto implica que el 'Sender' y el 'Receiver' no necesariamente deben estar sincronizados para que la comunicación sea exitosa.
-> - Caso 1: Si el 'Sender' envía un mensaje y el 'Receiver' no lo recibe, el 'Sender' no se quedará esperando hasta que el 'Receiver' lo reciba, pues el canal tiene un tamaño definido y puede almacenar mensajes. El 'Sender' podrá continuar con otras tareas.
-> - Caso 2: Si el 'Receiver' recibe un mensaje y el 'Sender' no lo envía, el 'Receiver' no se quedará esperando hasta que el 'Sender' lo envíe, pues el canal tiene un tamaño definido y puede almacenar mensajes. El 'Receiver' podrá continuar con otras tareas hasta que el canal quede vacío.
-
-![alt text](/assets/goroutines-buffered.png "Buffered Channel")
+in progress...
