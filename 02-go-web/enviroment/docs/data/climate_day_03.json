@@ -1,0 +1,12 @@
+[
+    {"country": "USA", "average_temperature": 25.9},
+    {"country": "Canada", "average_temperature": 16.5},
+    {"country": "Mexico", "average_temperature": 30.5},
+    {"country": "Brazil", "average_temperature": 29.1},
+    {"country": "France", "average_temperature": 20.4},
+    {"country": "Germany", "average_temperature": 23.2},
+    {"country": "Australia", "average_temperature": 30.1},
+    {"country": "Japan", "average_temperature": 27.2},
+    {"country": "India", "average_temperature": 32.0},
+    {"country": "China", "average_temperature": 28.3}
+]
