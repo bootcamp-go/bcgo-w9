@@ -1,0 +1,81 @@
+basePath: /api/v1
+definitions:
+  handlers.MovieJSON:
+    properties:
+      genre:
+        type: string
+      title:
+        type: string
+      year:
+        type: integer
+    type: object
+  handlers.ResponseBodyGetMovieByTitle:
+    properties:
+      data:
+        $ref: '#/definitions/handlers.MovieJSON'
+      message:
+        type: string
+    type: object
+  handlers.ResponseBodyGetMovies:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/handlers.MovieJSON'
+        type: array
+      message:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: random@gmail.com
+    name: API Support
+  description: This is a sample server for Movies API.
+  title: Movies API
+  version: "1"
+paths:
+  /movies:
+    get:
+      description: Get all movies
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.ResponseBodyGetMovies'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ResponseBodyGetMovies'
+      summary: Get movies
+      tags:
+      - movies
+  /movies/{title}:
+    get:
+      description: Get a movie by title
+      parameters:
+      - description: Movie title
+        in: path
+        name: title
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handlers.ResponseBodyGetMovieByTitle'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handlers.ResponseBodyGetMovieByTitle'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handlers.ResponseBodyGetMovieByTitle'
+      summary: Get movie by title
+      tags:
+      - movies
+swagger: "2.0"
